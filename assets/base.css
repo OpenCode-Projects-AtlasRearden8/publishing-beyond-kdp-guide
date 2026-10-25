@@ -1,0 +1,197 @@
+/* Publishing Beyond KDP — static site stylesheet */
+:root {
+  --ink: #24303f;
+  --muted: #5b6b7d;
+  --paper: #fbf9f4;
+  --card: #ffffff;
+  --line: #d8d3c6;
+  --accent: #1f6f5c;
+  --accent-soft: #e7f2ee;
+  --warn-soft: #fdf3e3;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 3rem;
+}
+
+a { color: var(--accent); }
+a:hover { text-decoration-style: wavy; }
+
+header.site {
+  border-bottom: 3px double var(--line);
+  padding: 1rem 0 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+header.site .brand {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+header.site h1 {
+  font-size: 1.35rem;
+  margin: 0.2rem 0 0;
+}
+
+nav.pages {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.88rem;
+  margin: 0.8rem 0 0;
+  line-height: 1.9;
+}
+
+nav.pages a { color: var(--muted); text-decoration: none; }
+nav.pages a.here { color: var(--accent); font-weight: 700; }
+nav.pages a:hover { color: var(--accent); }
+
+h1.page-title { font-size: 2rem; margin: 0.5rem 0; }
+
+h2 { font-size: 1.4rem; margin-top: 2rem; }
+h3 { font-size: 1.15rem; margin-top: 1.6rem; }
+h4 {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-top: 1.5rem;
+}
+
+article { hyphens: auto; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.25rem 0;
+  font-size: 0.92rem;
+}
+
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.6rem;
+  vertical-align: top;
+  text-align: left;
+}
+
+th {
+  background: var(--accent-soft);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+blockquote {
+  margin: 1.25rem 0;
+  padding: 0.6rem 1rem;
+  border-left: 4px solid var(--accent);
+  background: var(--card);
+  font-size: 0.95rem;
+}
+
+code {
+  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  background: #f1eee6;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+pre {
+  background: #2b3440;
+  color: #e8e4d8;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+pre code { background: none; color: inherit; padding: 0; }
+
+hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
+
+ul.checkbox { list-style: none; padding-left: 0.2rem; }
+ul.checkbox li::before {
+  content: "\2610\00a0\00a0";
+  color: var(--muted);
+}
+ul.checkbox li.checked::before { content: "\2611\00a0\00a0"; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  margin: 1rem 0;
+}
+
+.note {
+  background: var(--warn-soft);
+  border-left: 4px solid #d99a2b;
+  padding: 0.6rem 1rem;
+  margin: 1.25rem 0;
+  font-size: 0.95rem;
+}
+
+.toc-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.toc-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+}
+
+.toc-card a.project {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.toc-card p { margin: 0.35rem 0 0; font-size: 0.88rem; color: var(--muted); }
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+footer.site {
+  margin-top: 2.5rem;
+  border-top: 3px double var(--line);
+  padding-top: 0.8rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+@media print {
+  nav.pages, .pager, footer.site { display: none; }
+  body { background: #fff; font-size: 11pt; }
+}
